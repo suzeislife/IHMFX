@@ -36,7 +36,7 @@ public class MineHuntModel implements IMineHuntModel {
     }
     // Add random Mine
     int g = 0, j = 0, i = 0;
-    while (i < minesNb) {
+    while (i <= minesNb) {
       g = randomRow.nextInt(numberRow);
       j = randomCol.nextInt(numberCol);
       if (!mineHunt[g][j].isMine()) {
@@ -134,20 +134,19 @@ public class MineHuntModel implements IMineHuntModel {
   }
 
   public String toString() {
-    String value = null;
+    String value = "";
     for (int i = 0; i < mineHunt.length; i++) {
       value += "[ ";
       for (int j = 0; j < mineHunt[i].length; j++) {
         if (mineHunt[i][j].isMine()) {
-          value += "M, ";
+          value += "M,";
         } else {
-          value += "V ,";
+          value += "V,";
         }
       }
-      value += " ]";
+      value += " ] \n";
     }
     return value;
-
   }
 
 }
