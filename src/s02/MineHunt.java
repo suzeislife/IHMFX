@@ -1,11 +1,10 @@
 package s02;
 
-<<<<<<< HEAD
 
-=======
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
->>>>>>> 03d550975b20c0fc64c4db5f16cd4fd9f43b11d1
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
