@@ -5,6 +5,7 @@ public class TestMineHuntModel {
   public static void main(String[] args) {
 
     MineHuntModel test = new MineHuntModel();
+    System.out.println(test.toString());
   }
 
 }
