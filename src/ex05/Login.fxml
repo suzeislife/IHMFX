@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="333.0" prefWidth="508.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65">
+<AnchorPane prefHeight="333.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ex05.LoginController">
    <children>
       <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -41,20 +40,20 @@
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <TextField prefHeight="31.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="userName" prefHeight="31.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="50.0" />
                </GridPane.margin>
             </TextField>
-            <TextField prefHeight="31.0" prefWidth="38.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="password" prefHeight="31.0" prefWidth="38.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="120.0" />
                </GridPane.margin>
             </TextField>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="70.0" text="Login" />
-                  <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="82.0" text="Cancel" />
+                  <Button fx:id="login" mnemonicParsing="false" onAction="#handleLoginBtnAction" prefHeight="33.0" prefWidth="70.0" text="Login" />
+                  <Button fx:id="cancel" mnemonicParsing="false" onAction="#handleCancelBtnAction" prefHeight="33.0" prefWidth="82.0" text="Cancel" />
                </children>
                <GridPane.margin>
                   <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
