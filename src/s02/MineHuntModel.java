@@ -8,7 +8,7 @@ public class MineHuntModel implements IMineHuntModel {
 	private int numberCol;
 	private int minesNb;
 	private int error;
-	private Cell[][] mineHunt;
+	private CellButton[][] mineHunt;
 
 	private Random randomRow = new Random();
 	private Random randomCol = new Random();
@@ -18,7 +18,7 @@ public class MineHuntModel implements IMineHuntModel {
 		this.numberRow = 10;
 		this.numberCol = 10;
 		this.minesNb = 10;
-		mineHunt = new Cell[numberRow][numberCol];
+		mineHunt = new CellButton[numberRow][numberCol];
 		initNewGame(minesNb);
 	}
 
@@ -26,11 +26,11 @@ public class MineHuntModel implements IMineHuntModel {
 		this.numberRow = numberRow;
 		this.numberCol = numberCol;
 		this.minesNb = minesNb;
-		mineHunt = new Cell[numberRow][numberCol];
+		mineHunt = new CellButton[numberRow][numberCol];
 		initNewGame(minesNb);
 	}
 
-	public MineHuntModel(Cell[][] mineHunt) {
+	public MineHuntModel(CellButton[][] mineHunt) {
 		// Default game
 		this.numberRow = 10;
 		this.numberCol = 10;
@@ -45,7 +45,7 @@ public class MineHuntModel implements IMineHuntModel {
 		// Init all cell
 		for (int a = 0; a < mineHunt.length; a++) {
 			for (int b = 0; b < mineHunt[a].length; b++) {
-				mineHunt[a][b] = new Cell(false);
+				mineHunt[a][b] = new CellButton(a,b);
 			}
 		}
 		// Add random Mine
@@ -128,7 +128,7 @@ public class MineHuntModel implements IMineHuntModel {
 	@Override
 	public boolean open(int row, int col) {
 		boolean checkMine = false;
-		Cell mine = mineHunt[row][col];
+		CellButton mine = mineHunt[row][col];
 		if (mine.isMine()) {
 			checkMine = true;
 		}
@@ -138,7 +138,7 @@ public class MineHuntModel implements IMineHuntModel {
 
 	@Override
 	public void setFlagState(int row, int col, boolean state) {
-		Cell mine = mineHunt[row][col];
+		CellButton mine = mineHunt[row][col];
 		if (mine.isFlag()) {
 			mine.setFlag(false);
 		} else {
@@ -163,11 +163,11 @@ public class MineHuntModel implements IMineHuntModel {
 		return value;
 	}
 
-	public Cell[][] getMineHunt() {
+	public CellButton[][] getMineHunt() {
 		return mineHunt;
 	}
 
-	public void setMineHunt(Cell[][] mineHunt) {
+	public void setMineHunt(CellButton[][] mineHunt) {
 		this.mineHunt = mineHunt;
 	}
 

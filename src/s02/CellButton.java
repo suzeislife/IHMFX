@@ -1,15 +1,21 @@
 package s02;
 
-public class Cell {
+import javafx.scene.control.Button;
+
+public class CellButton extends Button{
 
   private boolean flag;
   private boolean mine;
   private boolean open;
+  private int row;
+  private int col;
 
-  public Cell(boolean mine) {
+  public CellButton(int row, int col) {
     flag = false;
     open = false;
-    this.mine = mine;
+    mine = false;
+    this.row = row;
+    this.col = col;
   }
 
   public boolean isFlag() {
