@@ -2,13 +2,13 @@ package s02;
 
 import javafx.scene.control.Button;
 
-public class CellButton extends Button{
+public class CellButton extends Button {
 
   private boolean flag;
   private boolean mine;
   private boolean open;
-  private int row;
-  private int col;
+  private int     row;
+  private int     col;
 
   public CellButton(int row, int col) {
     flag = false;
@@ -41,5 +41,22 @@ public class CellButton extends Button{
   public void setOpen(boolean open) {
     this.open = open;
   }
+
+  public int getRow() {
+    return row;
+  }
+
+  public void setRow(int row) {
+    this.row = row;
+  }
+
+  public int getCol() {
+    return col;
+  }
+
+  public void setCol(int col) {
+    this.col = col;
+  }
+  
 
 }
