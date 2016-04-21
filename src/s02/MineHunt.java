@@ -200,6 +200,10 @@ public class MineHunt extends Application {
 			dialog.setAlertType(AlertType.INFORMATION);
 			dialog.setContentText("Congratulation !\n" + "Current game endes successfully (no error)");
 			dialog.showAndWait();
+		} else if (errors == CONSTANTE.NBR_MINES) {
+			dialog.setAlertType(AlertType.WARNING);
+			dialog.setContentText("FAIL !\n" + "Current game ended with ALL mine pressed");
+			dialog.showAndWait();
 		} else {
 			dialog.setAlertType(AlertType.WARNING);
 			dialog.setContentText("Current game ended with " + errors + " errors");

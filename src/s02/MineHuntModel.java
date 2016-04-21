@@ -155,6 +155,9 @@ public class MineHuntModel implements IMineHuntModel {
 			nbClick.setValue(++count);
 			if (mine.isMine()) {
 				nbError.setValue(++error);
+				if(nbError.getValue()==minesNb){
+					ctrl.lostGame(nbError.getValue());
+				}
 				checkMine = true;
 			}
 			mine.setOpen(true);

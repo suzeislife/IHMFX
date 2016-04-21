@@ -60,4 +60,11 @@ public class MineHuntController implements EventHandler<ActionEvent> {
 		view.setImageButton(cellButton, 5, 0);
 	}
 
+	public void lostGame(Integer value) {
+		view.endGame(value);
+		
+	}
+
+	
+
 }
