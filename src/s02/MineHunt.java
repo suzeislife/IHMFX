@@ -2,9 +2,7 @@ package s02;
 
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-
-
-
+import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -131,6 +129,10 @@ public class MineHunt extends Application {
       gameGrid.add(textRow, 1, 0);
       gameGrid.add(textCol, 1, 1);
       gameGrid.add(textMine, 1, 2);
+      
+      ButtonType loginButtonType = new ButtonType("Login", ButtonData.OK_DONE);
+      dbox.getDialogPane().getButtonTypes().addAll(loginButtonType, ButtonType.CANCEL);
+      
       
       dbox.getDialogPane().setContent(gameGrid);
       
