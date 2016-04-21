@@ -109,34 +109,31 @@ public class MineHunt extends Application {
     });
     
     newGame.setOnAction(event ->{
-      dbox.setTitle("Game Setting");
-      dbox.setHeaderText("Parametre Game:");
-
+      
+      VBox window2 = new VBox();
+      Stage stage = new Stage();
+      stage.setTitle("Game Setting");
+      stage.setScene(new Scene(window2, 450, 450));
+      
       GridPane gameGrid = new GridPane();
       gameGrid.setHgap(10);
       gameGrid.setVgap(10);
-      
       Label numberRow = new Label("Number row: ");
       Label numbreCol = new Label("Number col: ");
       Label numberMine = new Label("Number mine: ");
       TextField textRow = new TextField();
       TextField textCol = new TextField();
       TextField textMine = new TextField();
-      
       gameGrid.add(numberRow, 0, 0);
       gameGrid.add(numbreCol, 0, 1);
       gameGrid.add(numberMine, 0, 2);
       gameGrid.add(textRow, 1, 0);
       gameGrid.add(textCol, 1, 1);
       gameGrid.add(textMine, 1, 2);
-      
-      ButtonType loginButtonType = new ButtonType("Login", ButtonData.OK_DONE);
-      dbox.getDialogPane().getButtonTypes().addAll(loginButtonType, ButtonType.CANCEL);
+      window2.getChildren().add(gameGrid);
       
       
-      dbox.getDialogPane().setContent(gameGrid);
-      
-      dbox.showAndWait();
+      stage.show();
     });
 
     mainStage.setScene(scene);
