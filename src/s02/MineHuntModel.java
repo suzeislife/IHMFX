@@ -110,8 +110,22 @@ public class MineHuntModel implements IMineHuntModel {
 				break;
 			i++;
 		}
-
+		
+		  if (countNeighborMine == 0) { decouvre(row, col); }
+		 
 		return countNeighborMine;
+	}
+
+	private void decouvre(int row, int col) {
+		System.out.println(neighborMines(row - 1, col - 1));
+		//System.out.println(neighborMines(row - 1, col));
+		//System.out.println(neighborMines(row - 1, col + 1));
+		/*
+		neighborMines(row, col - 1);
+		neighborMines(row, col + 1);
+		neighborMines(row + 1, col - 1);
+		neighborMines(row + 1, col);
+		neighborMines(row + 1, col + 1);*/
 	}
 
 	@Override
@@ -155,7 +169,7 @@ public class MineHuntModel implements IMineHuntModel {
 			nbClick.setValue(++count);
 			if (mine.isMine()) {
 				nbError.setValue(++error);
-				if(nbError.getValue()==minesNb){
+				if (nbError.getValue() == minesNb) {
 					ctrl.lostGame(nbError.getValue());
 				}
 				checkMine = true;
